@@ -74,7 +74,7 @@ fun myComplexLayout(innerPadding: PaddingValues) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(200.dp)
+                .height(300.dp)
         ) {
 
             Column(
