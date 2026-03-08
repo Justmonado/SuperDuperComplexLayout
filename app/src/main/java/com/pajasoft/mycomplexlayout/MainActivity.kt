@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -31,6 +32,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.pajasoft.mycomplexlayout.ui.theme.MyComplexLayoutTheme
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material3.Icon
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -120,17 +125,26 @@ fun myComplexLayout(innerPadding: PaddingValues) {
 
             ) {
 
+
                 val comidas = listOf("Hamburguesa", "Pizza", "Tacos", "Sushi","Pescado","Camarones","Kebabs","Torta")
 
                 items(comidas) { comida ->
 
-                    Box(
+                    Row(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(vertical = 6.dp)
                             .background(Color.Gray, RoundedCornerShape(20.dp))
-                            .padding(15.dp)
+                            .padding(15.dp),
+                        verticalAlignment = Alignment.CenterVertically
                     ) {
+
+                        Icon(
+                            imageVector = Icons.Default.Menu,
+                            contentDescription = "menu",
+                            modifier = Modifier.size(20.dp)
+                        )
+
                         Text(comida)
                     }
                 }
